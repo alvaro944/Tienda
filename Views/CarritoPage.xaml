@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Alvaro_Practica3.Views.CarritoPage"
+             Title="Carrito">
+
+    <StackLayout Padding="10">
+        <Label Text="Carrito de Compras" 
+               FontSize="Large" 
+               FontAttributes="Bold"
+               HorizontalOptions="Center" />
+
+        <!-- Lista de artículos -->
+        <ListView x:Name="CarritoListView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Nombre}" Detail="{Binding Precio}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <!-- Total -->
+        <Label x:Name="TotalLabel"
+               Text="Total: 0 €"
+               FontSize="Medium"
+               FontAttributes="Bold"
+               HorizontalOptions="End"
+               Margin="0,20,0,0" />
+    </StackLayout>
+</ContentPage>
